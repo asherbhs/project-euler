@@ -1,24 +1,27 @@
+# script to time how long each given file takes to run
+# this script assumes that it is called in one of the problem-* directories
+
 for file in "$@"
 do
     case "${file##*.}" in
         kt)
-            ~/programming/project-euler/run-scripts/run-kotlin -t $file
+            ../run-scripts/run-kotlin -t $file
             echo 
         ;;
         hs) 
-            ~/programming/project-euler/run-scripts/run-haskell -t $file
+            ../run-scripts/run-haskell -t $file
             echo
         ;;
         c) 
-            ~/programming/project-euler/run-scripts/run-c -t $file
+            ../run-scripts/run-c -t $file
             echo
         ;;
         py)
-            ~/programming/project-euler/run-scripts/run-python -t $file
+            ../run-scripts/run-python -t $file
             echo
         ;;
         java)
-            ~/programming/project-euler/run-scripts/run-java -t $file
+            ../run-scripts/run-java -t $file
             echo
         ;;
     esac
