@@ -5,6 +5,7 @@ primes :: [Int]
 -- seive of Eratosphenes
 primes = seive [2 ..]
   where
+    seive :: [Int] -> [Int]
     seive (x : xs) = x : seive (filter (\n -> mod n x /= 0) xs)
 
 primeFactors :: Int -> [Int]
