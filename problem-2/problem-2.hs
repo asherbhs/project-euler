@@ -1,4 +1,5 @@
 {-# LANGUAGE NumericUnderscores #-}
+
 import Data.Function ((&))
 
 iterate2 :: (a -> a -> a) -> a -> a -> [a]
