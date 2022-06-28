@@ -16,4 +16,4 @@ primeFactors n
         p = fromJust $ find (\x -> mod n x == 0) primes
 
 main :: IO ()
-main = print $ maximum $ primeFactors 600851475143
+main = print $ last $ primeFactors 600851475143
