@@ -5,7 +5,7 @@ iterate2 f x y = x : iterate2 f y (f x y)
 
 solution :: Integer
 solution = fibonacci
-    & takeWhile (<= 4000000)
+    & takeWhile (<= 4_000_000)
     & filter even
     & sum
   where fibonacci = iterate2 (+) 1 2
