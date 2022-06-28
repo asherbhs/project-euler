@@ -9,6 +9,7 @@ public class Problem1 {
         return IntStream.range(1, 1000)
             .filter(n -> n % 3 == 0 || n % 5 == 0)
             .sum();
+
         // you can also just paste in the C version:
 
         // int sum = 0;
