@@ -9,9 +9,7 @@ public class Problem2 {
         FibonacciGenerator f = new FibonacciGenerator();
         System.out.println(
 
-            IntStream.generate(
-                () -> f.nextFibonacci()
-            )
+            IntStream.generate(() -> f.nextFibonacci())
                 .takeWhile(n -> n <= 4000000)
                 .filter(n -> n % 2 == 0)
                 .sum()
