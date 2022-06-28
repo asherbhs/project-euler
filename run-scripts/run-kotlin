@@ -1,0 +1,32 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source=${!OPTIND}
+jar="${source%%.*}.jar"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo KOTLIN
+    echo
+    echo "Compiling ${source}..."
+fi
+kotlinc $source -include-runtime -d $jar
+
+if [ -f $jar ]
+then
+    if [[ $timeit == true ]]
+    then
+        echo "Timing ${source}..."
+        time java -jar $jar
+    else
+        java -jar $jar
+    fi
+
+    rm $jar
+fi

@@ -1,0 +1,34 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+name="${source%%.*}"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo HASKELL
+    echo
+    echo "Compiling ${source}..."
+fi
+ghc -O2 -o $name $source
+
+if [ -f $name ]
+then
+    if [[ $timeit == true ]]
+    then
+        echo "Timing ${source}..."
+        time ./$name
+    else
+        ./$name
+    fi
+
+    rm $name
+    rm ${name}.hi
+    rm ${name}.o
+fi

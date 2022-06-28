@@ -1,0 +1,20 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo PYTHON
+    echo
+    echo "Timing ${source}..."
+    time python3 $source
+else
+    python3 $source
+fi

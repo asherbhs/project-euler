@@ -1,0 +1,32 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+name="${source%%.*}"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo C
+    echo
+    echo "Compiling $source with GCC..."
+fi
+gcc -o $name $source
+
+if [ -f $name ]
+then
+    if [[ $timeit == true ]]
+    then
+        echo "Timing ${source}..."
+        time ./$name
+    else
+        ./$name
+    fi
+
+    rm ./$name
+fi

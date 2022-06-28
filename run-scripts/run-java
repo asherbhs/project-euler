@@ -1,0 +1,33 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+name="${source%%.*}"
+class="${name}.class"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo Java
+    echo
+    echo "Compiling ${source}..."
+fi
+javac $source
+
+if [ -f $class ]
+then
+    if [[ $timeit == true ]]
+    then
+        echo "Timing ${source}..."
+        time java $name
+    else
+        java $name
+    fi
+
+    rm $class
+fi
