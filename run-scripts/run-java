@@ -29,5 +29,5 @@ then
         java $name
     fi
 
-    rm $class
+    rm *.class
 fi
