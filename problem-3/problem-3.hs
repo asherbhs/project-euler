@@ -11,11 +11,9 @@ primes = seive [2 ..]
 primeFactors :: Int -> [Int]
 primeFactors n
     | n <= 1 = []
-    | otherwise = 
-      let
+    | otherwise = p : primeFactors (div n p)
+      where
         p = fromJust $ find (\x -> mod n x == 0) primes
-      in
-        p : primeFactors (div n p)
 
 main :: IO ()
 main = print $ maximum $ primeFactors 600851475143
