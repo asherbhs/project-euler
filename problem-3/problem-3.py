@@ -27,5 +27,3 @@
 #     return ps
 
 # print(prime_factors(600851475143)[-1])
-
-

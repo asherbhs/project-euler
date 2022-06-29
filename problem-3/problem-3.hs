@@ -2,7 +2,6 @@ import Data.Maybe (fromJust)
 import Data.List (find)
 
 primes :: [Int]
--- seive of Eratosphenes
 primes = seive [2 ..]
   where
     seive :: [Int] -> [Int]
