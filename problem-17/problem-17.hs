@@ -5,7 +5,7 @@ say n
     | n < 0     = undefined
     | n > 1000  = undefined
     | otherwise = digitStringToWords $ show n
- where
+  where
     digitStringToWords s = case s of
         "0" -> ""
         "1" -> "one"
