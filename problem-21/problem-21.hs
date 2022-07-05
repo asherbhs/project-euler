@@ -9,6 +9,7 @@ factors n = [1 .. floor $ sqrt $ fromIntegral n]
     & (\(xs, ys) -> (xs, reverse ys))
     & uncurry glue
   where
+    glue :: [Int] -> [Int] -> [Int]
     glue [x] (y : ys) = if x == y then y : ys else x : y : ys
     glue (x : xs) ys = x : glue xs ys
 
