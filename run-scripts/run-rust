@@ -16,7 +16,7 @@ then
     echo
     echo "Compiling $source"
 fi
-rustc -o $name $source
+rustc -C opt-level=3 -o $name $source
 
 if [ -f $name ]
 then

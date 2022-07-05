@@ -16,7 +16,7 @@ then
     echo
     echo "Compiling $source with GCC..."
 fi
-gcc -o $name $source
+gcc -O3 -o $name $source
 
 if [ -f $name ]
 then
