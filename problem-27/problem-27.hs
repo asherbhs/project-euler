@@ -24,4 +24,4 @@ main :: IO ()
 main = print 
     $ [ (a, b) | a <- [-999 .. 999], b <- [-1000 .. 1000] ]
     & maximumBy (comparing (uncurry consecutivePrimesForCoefficients))
-    & (\(a, b) -> a * b)
+    & uncurry (*)
