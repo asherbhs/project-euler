@@ -1,0 +1,4 @@
+cd ~/programming/project-euler
+mkdir problem-$1
+cd problem-$1
+touch problem-$1.$2
