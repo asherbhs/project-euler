@@ -16,7 +16,7 @@ then
     echo
     echo "Compiling ${source}..."
 fi
-ghc -O2 -o $name $source
+ghc -Wall -O2 -o $name $source
 
 if [ -f $name ]
 then
