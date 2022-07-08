@@ -24,5 +24,13 @@ do
             ../run-scripts/run-java -t $file
             echo
         ;;
+        rs)
+            ../run-scripts/run-rust -t $file
+            echo
+        ;;
+        cs)
+            ../run-scripts/run-c# -t $file
+            echo
+        ;;
     esac
 done
