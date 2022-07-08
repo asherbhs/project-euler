@@ -6,31 +6,25 @@ do
     case "${file##*.}" in
         kt)
             ../run-scripts/run-kotlin -t $file
-            echo 
         ;;
         hs) 
             ../run-scripts/run-haskell -t $file
-            echo
         ;;
         c) 
             ../run-scripts/run-c -t $file
-            echo
         ;;
         py)
             ../run-scripts/run-python -t $file
-            echo
         ;;
         java)
             ../run-scripts/run-java -t $file
-            echo
         ;;
         rs)
             ../run-scripts/run-rust -t $file
-            echo
         ;;
         cs)
             ../run-scripts/run-c# -t $file
-            echo
         ;;
     esac
+    echo
 done
