@@ -1,0 +1,33 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+name="${source%%.*}"
+exe="${name}.exe"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo C#
+    echo
+    echo "Compiling ${source}..."
+fi
+mcs $source
+
+if [ -f $class ]
+then
+    if [[ $timeit == true ]]
+    then
+        echo "Timing ${source}..."
+        time mono $exe
+    else
+        mono $exe
+    fi
+
+    rm *.exe
+fi
