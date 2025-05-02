@@ -1,0 +1,20 @@
+timeit=false
+while getopts ":t" o
+do
+    case "${o}" in
+        t) timeit=true ;;
+    esac
+done
+
+source="${!OPTIND}"
+
+if [[ $timeit == true ]]
+then
+    echo
+    echo RAKU
+    echo
+    echo "Timing ${source}..."
+    time raku $source
+else
+    raku $source
+fi
